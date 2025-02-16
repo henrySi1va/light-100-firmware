@@ -22,25 +22,22 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libsdl2-dev libmagic1 \
     && rm -rf /var/lib/apt/lists/*
 
-# Create a new virtual environment
-RUN python3 -m venv /opt/zephyrproject/.venv
-
 # Install west
-RUN /bin/bash -c "source /opt/zephyrproject/.venv/bin/activate && pip3 install west"
+RUN pip3 install west --break-system-packages
 
 # Set up Zephyr environment
 RUN mkdir -p /opt/zephyrproject
 WORKDIR /opt/zephyrproject
-RUN /bin/bash -c "source /opt/zephyrproject/.venv/bin/activate && west init"
-RUN /bin/bash -c "source /opt/zephyrproject/.venv/bin/activate && west update"
-RUN /bin/bash -c "source /opt/zephyrproject/.venv/bin/activate && west zephyr-export"
+RUN west init
+RUN west update
+RUN west zephyr-export
 
 # Install Zephyr Python dependencies
-RUN /bin/bash -c "source /opt/zephyrproject/.venv/bin/activate && west packages pip --install"
+RUN pip3 install -r /opt/zephyrproject/zephyr/scripts/requirements.txt --break-system-packages
 
 # Install Zephyr SDK
 WORKDIR /opt/zephyrproject/zephyr
-RUN /bin/bash -c "source /opt/zephyrproject/.venv/bin/activate && west sdk install"
+RUN west sdk install
 
 # Set environment variables
 ENV ZEPHYR_BASE=/opt/zephyrproject/zephyr
