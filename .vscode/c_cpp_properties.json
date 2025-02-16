@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "name": "Linux",
+      "compileCommands": "${workspaceFolder}/light-100/build/compile_commands.json",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${env:ZEPHYR_BASE}/include/**",
+        "${env:ZEPHYR_BASE}/arch/**",
+        "${env:ZEPHYR_BASE}/subsys/**",
+        "${env:ZEPHYR_BASE}/drivers/**",
+        "${env:ZEPHYR_BASE}/boards/**",
+        "${env:ZEPHYR_BASE}/soc/**",
+        "${env:ZEPHYR_BASE}/lib/**",
+        "/root/zephyr-sdk-0.17.0/x86_64-zephyr-elf/include/**"
+      ],
+      "defines": [
+      ],
+      "compilerPath": "/root/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "gcc-x64"
+    }
+  ],
+  "version": 4
+}
