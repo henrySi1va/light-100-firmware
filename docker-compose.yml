@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  zephyr:
+    build: .
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    environment:
+      - ZEPHYR_BASE=/opt/zephyrproject/zephyr
+      - ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk
+    command: /bin/bash -c "source /opt/zephyrproject/zephyr/zephyr-env.sh && /bin/bash"
+    stdin_open: true
+    tty: true
