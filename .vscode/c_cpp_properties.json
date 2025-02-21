@@ -2,7 +2,7 @@
   "configurations": [
     {
       "name": "Linux",
-      "compileCommands": "${workspaceFolder}/light-100/build/compile_commands.json",
+      "compileCommands": "${workspaceFolder}/app/build/compile_commands.json",
       "includePath": [
         "${workspaceFolder}/**",
         "${env:ZEPHYR_BASE}/include/**",
