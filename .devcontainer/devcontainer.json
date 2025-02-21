@@ -7,10 +7,11 @@
     "vscode": {
       "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
-      }
-    },
-    "extensions": [
-      "ms-vscode.cpptools-extension-pack"
-    ]
+      },
+      "extensions": [
+        "ms-vscode.cpptools",
+        "marus25.cortex-debug"
+      ]
+    }
   }
 }
