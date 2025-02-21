@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "West Build",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "command": "west",
+      "args": [
+        "build",
+        "-b",
+        "qemu_x86",
+        "."
+      ],
+        "options": {
+            "cwd": "${workspaceFolder}/app"
+        },
+      "problemMatcher": ["$gcc"],
+      "detail": "Build the project using west"
+    },
+    {
+      "label": "West Run",
+      "type": "shell",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "command": "west",
+      "args": [
+        "build",
+        "-t",
+        "run"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/app"
+      },
+      "problemMatcher": [],
+      "detail": "Run the project using west"
+    }
+  ]
+}
