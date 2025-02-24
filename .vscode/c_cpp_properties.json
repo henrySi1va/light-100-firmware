@@ -12,11 +12,11 @@
         "${env:ZEPHYR_BASE}/boards/**",
         "${env:ZEPHYR_BASE}/soc/**",
         "${env:ZEPHYR_BASE}/lib/**",
-        "/root/zephyr-sdk-0.17.0/x86_64-zephyr-elf/include/**"
+        "/root/zephyr-sdk-0.17.0/arm-zephyr-eabi/include/**"
       ],
       "defines": [
       ],
-      "compilerPath": "/root/zephyr-sdk-0.17.0/x86_64-zephyr-elf/bin/x86_64-zephyr-elf-gcc",
+      "compilerPath": "/root/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc",
       "cStandard": "c11",
       "cppStandard": "c++17",
       "intelliSenseMode": "gcc-x64"
