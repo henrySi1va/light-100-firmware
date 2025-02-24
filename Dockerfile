@@ -43,6 +43,9 @@ RUN west sdk install
 ENV ZEPHYR_BASE=/opt/zephyrproject/zephyr
 ENV ZEPHYR_SDK_INSTALL_DIR=/opt/zephyrproject/zephyr/zephyr-sdk
 
+# Add SDK tools to PATH
+ENV PATH="/root/zephyr-sdk-0.17.0/sysroots/x86_64-pokysdk-linux/usr/bin:${PATH}"
+
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
