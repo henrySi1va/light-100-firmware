@@ -37,7 +37,7 @@ RUN pip3 install -r /opt/zephyrproject/zephyr/scripts/requirements.txt --break-s
 
 # Install Zephyr SDK
 WORKDIR /opt/zephyrproject/zephyr
-RUN west sdk install
+RUN west sdk install --toolchains arm-zephyr-eabi
 
 # Set environment variables
 ENV ZEPHYR_BASE=/opt/zephyrproject/zephyr
