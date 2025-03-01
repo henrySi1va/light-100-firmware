@@ -1,0 +1,11 @@
+{
+    "editor.formatOnSave": true,
+    "clangd.arguments": [
+        "--compile-commands-dir=app/build",
+        "--query-driver=/root/zephyr-sdk-0.17.0/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc"
+    ],
+    "[c]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "C_Cpp.intelliSenseEngine": "disabled"
+}

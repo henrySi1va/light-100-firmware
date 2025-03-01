@@ -13,12 +13,16 @@
         "build",
         "-b",
         "qemu_cortex_m3",
-        "."
+        ".",
+        "--",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
       ],
-        "options": {
-            "cwd": "${workspaceFolder}/app"
-        },
-      "problemMatcher": ["$gcc"],
+      "options": {
+        "cwd": "${workspaceFolder}/app"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
       "detail": "Build the project using west"
     },
     {

@@ -20,14 +20,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     file \
     make gcc gcc-multilib g++-multilib \
     libsdl2-dev libmagic1 \
-    clang-tidy clang-format \
+    clang-tidy clang-format clangd \
     && rm -rf /var/lib/apt/lists/*
 
 # Install west
 RUN pip3 install west --break-system-packages
-
-# Install pre-commit
-RUN pip3 install pre-commit --break-system-packages
 
 # Set up Zephyr environment
 RUN mkdir -p /opt/zephyrproject
