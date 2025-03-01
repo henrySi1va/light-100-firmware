@@ -26,6 +26,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install west
 RUN pip3 install west --break-system-packages
 
+# Install pre-commit
+RUN pip3 install pre-commit --break-system-packages
+
 # Set up Zephyr environment
 RUN mkdir -p /opt/zephyrproject
 WORKDIR /opt/zephyrproject
