@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     file \
     make gcc gcc-multilib g++-multilib \
     libsdl2-dev libmagic1 \
+    clang-tidy clang-format \
     && rm -rf /var/lib/apt/lists/*
 
 # Install west
