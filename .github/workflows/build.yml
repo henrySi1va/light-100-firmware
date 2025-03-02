@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  push
+  pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: GHCR Login
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: henrySi1va
+          password: ${{ secrets.GHCR_PAT }}
+      
+      - name: Pull Image
+        run: docker pull ghcr.io/henrysi1va/light-100-firmware-zephyr:latest
+      
+      - name: Run Container and Build
+        run: |
+          docker run -it --rm -v ${{ github.workspace }}:/workspace ghcr.io/henrysi1va/light-100-firmware-zephyr:latest
+          west build -b qemu_cortex_m3 workspace/app
