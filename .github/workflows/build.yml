@@ -21,8 +21,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Where Am I?
-        run: pwd
-
       - name: Build
-        run: west build -b qemu_cortex_m3 /workspace/app
+        run: west build -b qemu_cortex_m3 app/
