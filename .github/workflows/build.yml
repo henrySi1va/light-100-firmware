@@ -1,0 +1,28 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/henrysi1va/light-100-firmware-zephyr:latest
+      credentials:
+        username: henrySi1va
+        password: ${{ secrets.GHCR_PAT }}
+      env:
+        ZEPHYR_BASE: /opt/zephyrproject/zephyr
+        ZEPHYR_SDK_INSTALL_DIR: /root/zephyr-sdk-0.17.0
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: west build -b qemu_cortex_m3 app/

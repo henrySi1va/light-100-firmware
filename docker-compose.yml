@@ -1,0 +1,12 @@
+services:
+  zephyr:
+    build: .
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    environment:
+      - ZEPHYR_BASE=/opt/zephyrproject/zephyr
+      - ZEPHYR_SDK_INSTALL_DIR=/root/zephyr-sdk-0.17.0
+      - GHCR_PAT=${GHCR_PAT}
+    stdin_open: true
+    tty: true

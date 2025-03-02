@@ -1,0 +1,31 @@
+Checks:
+  -*,                         # Disable everything first
+  bugprone-*,                 # Catch common mistakes
+  performance-*,              # Improve performance
+  readability-*,              # Enforce clean code
+  portability-*,              # Detect non-portable code
+  clang-analyzer-*,           # Static analysis for runtime errors
+  misc-*,                     # Miscellaneous useful checks
+
+  # Explicitly allow some recommended checks:
+  bugprone-integer-division,
+  bugprone-macro-parentheses,
+  bugprone-signed-char-misuse,
+  performance-unnecessary-value-param,
+  readability-implicit-bool-conversion,
+  readability-magic-numbers,
+
+  # Optional: Enable if you want stricter rules
+  readability-function-size,  # Warn if functions are too large
+  readability-braces-around-statements,
+  modernize-use-auto,        # Use `auto` where possible
+  modernize-use-default-member-init
+
+WarningsAsErrors: >
+  bugprone-*,
+  performance-*,
+  readability-*,
+  portability-*
+
+HeaderFilterRegex: '.*'  # Apply checks to all headers
+FormatStyle: file        # Use `.clang-format` if available
