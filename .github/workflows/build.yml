@@ -16,6 +16,9 @@ jobs:
       credentials:
         username: henrySi1va
         password: ${{ secrets.GHCR_PAT }}
+      env:
+        ZEPHYR_BASE: /opt/zephyrproject/zephyr
+        ZEPHYR_SDK_INSTALL_DIR: /opt/zephyrproject/zephyr/zephyr-sdk
 
     steps:
       - name: Checkout
