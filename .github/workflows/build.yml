@@ -18,15 +18,11 @@ jobs:
         password: ${{ secrets.GHCR_PAT }}
       env:
         ZEPHYR_BASE: /opt/zephyrproject/zephyr
-        ZEPHYR_SDK_INSTALL_DIR: /opt/zephyrproject/zephyr/zephyr-sdk
-        CMAKE_PREFIX_PATH: /root/zephyr-sdk-0.17.0/cmake
+        ZEPHYR_SDK_INSTALL_DIR: /root/zephyr-sdk-0.17.0
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Check for SDK
-        run: ls /opt
 
       - name: Build
         run: west build -b qemu_cortex_m3 app/
