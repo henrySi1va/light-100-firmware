@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/henrysi1va/light-100-firmware-zephyr:latest
-      credential:
+      credentials:
         username: henrySi1va
         password: ${{ secrets.GHCR_PAT }}
 
