@@ -19,7 +19,7 @@ jobs:
       env:
         ZEPHYR_BASE: /opt/zephyrproject/zephyr
         ZEPHYR_SDK_INSTALL_DIR: /opt/zephyrproject/zephyr/zephyr-sdk
-        CMAKE_PREFIX_PATH: /opt/zephyrproject/zephyr/cmake
+        CMAKE_PREFIX_PATH: /root/zephyr-sdk-0.17.0/cmake
 
     steps:
       - name: Checkout
