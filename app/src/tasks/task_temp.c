@@ -1,4 +1,4 @@
-#include "task_sound.h"
+#include "task_temp.h"
 #include "task_logger.h"
 #include <string.h>
 #include <zephyr/kernel.h>
@@ -6,17 +6,17 @@
 #define STACKSIZE 1024
 #define PRIORITY 7
 
-void sound_thread_function(void);
+void temp_thread_function(void);
 
-K_THREAD_DEFINE(sound_thread, STACKSIZE, sound_thread_function, NULL, NULL,
-                NULL, PRIORITY, 0, 100);
-extern const k_tid_t sound_thread;
+K_THREAD_DEFINE(temp_thread, STACKSIZE, temp_thread_function, NULL, NULL, NULL,
+                PRIORITY, 0, 100);
+extern const k_tid_t temp_thread;
 
-void sound_thread_function(void) {
+void temp_thread_function(void) {
 
   log_message_t msg;
 
-  strcpy(msg.message, "Hello from sound thread!");
+  strcpy(msg.message, "Hello from temp thread!");
 
   struct k_msgq *logger_task_msgq = task_logger_get_msgq();
 

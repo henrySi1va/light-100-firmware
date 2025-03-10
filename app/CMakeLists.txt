@@ -6,7 +6,7 @@ project(light-100)
 target_sources(app PRIVATE 
     src/main.c
     src/tasks/task_logger.c
-    src/tasks/task_sound.c)
+    src/tasks/task_temp.c)
 
 target_include_directories(app PRIVATE
     src/tasks)
