@@ -15,12 +15,23 @@ K_MSGQ_DEFINE(logger_task_msgq, sizeof(log_message_t), MSGQ_MAX_MSGS, 4);
 
 void logger_thread_function(void) {
   log_message_t msg;
+
   while (1) {
+    // Wait for the next message in the message queue.
     k_msgq_get(&logger_task_msgq, &msg, K_FOREVER);
+
+    // Print the message to the console.
     printk("%s\n", msg.message);
   }
 }
 
+/**
+ * @brief Retrieves the message queue for the logger task.
+ *
+ * This function returns a pointer to the message queue used by the logger task.
+ *
+ * @return A pointer to the message queue.
+ */
 struct k_msgq *task_logger_get_msgq(void) {
   return &logger_task_msgq;
 }
